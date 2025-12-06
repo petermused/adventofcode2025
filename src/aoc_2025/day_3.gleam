@@ -37,10 +37,10 @@ fn max_joltage(values: List(Int), digits num_digits: Int) -> Int {
   state.joltage
 }
 
-pub fn pt_1(input: List(List(Int))) {
+pub fn pt_1(input: List(List(Int))) -> Int {
   input |> list.map(max_joltage(_, digits: 2)) |> int.sum
 }
 
-pub fn pt_2(input: List(List(Int))) {
+pub fn pt_2(input: List(List(Int))) -> Int {
   input |> list.map(max_joltage(_, digits: 12)) |> int.sum
 }

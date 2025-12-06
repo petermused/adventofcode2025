@@ -16,7 +16,7 @@ pub fn parse(input: String) -> List(Int) {
   })
 }
 
-pub fn pt_1(rotations: List(Int)) {
+pub fn pt_1(rotations: List(Int)) -> Int {
   let positions =
     list.scan(rotations, 50, fn(position, rotation) {
       { position + rotation } % 100
@@ -38,7 +38,7 @@ fn num_multiples_of_100_between(start a: Int, end b: Int) -> Int {
   |> list.length
 }
 
-pub fn pt_2(rotations: List(Int)) {
+pub fn pt_2(rotations: List(Int)) -> Int {
   let positions = list.scan(rotations, 50, int.add) |> list.prepend(50)
 
   let num_clicks_during_rotations =

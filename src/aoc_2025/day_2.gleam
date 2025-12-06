@@ -71,7 +71,7 @@ fn invalid_ids_in_range_with_repeats(
   |> list.filter(fn(id) { id_range.start <= id && id <= id_range.end })
 }
 
-pub fn pt_1(id_ranges: List(IdRange)) {
+pub fn pt_1(id_ranges: List(IdRange)) -> Int {
   id_ranges
   |> list.flat_map(invalid_ids_in_range_with_repeats(_, repeats: 2))
   |> int.sum
@@ -86,7 +86,7 @@ fn all_invalid_ids_in_range(id_range: IdRange) -> List(Int) {
   |> list.unique
 }
 
-pub fn pt_2(id_ranges: List(IdRange)) {
+pub fn pt_2(id_ranges: List(IdRange)) -> Int {
   id_ranges
   |> list.flat_map(all_invalid_ids_in_range)
   |> int.sum
