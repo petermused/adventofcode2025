@@ -87,5 +87,20 @@ pub fn pt_1(input: Input) -> Int {
 }
 
 pub fn pt_2(input: Input) -> Int {
-  todo
+  let splitters =
+    input.splitters
+    |> set.to_list
+    |> list.sort(fn(a, b) { int.compare(a.row, b.row) })
+
+  let assert Ok(first_splitter) = list.first(splitters)
+
+  let assert Ok(num_timelines) =
+    splitters
+    |> list.reverse
+    |> list.fold(dict.new(), fn(memo, coord) {
+      todo as "base case 1 on each side, recursive case use memo"
+    })
+    |> dict.get(first_splitter)
+
+  num_timelines
 }
